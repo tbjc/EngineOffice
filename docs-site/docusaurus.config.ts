@@ -8,10 +8,10 @@ const config: Config = {
   favicon: 'img/favicon.svg',
 
   url: 'https://tbjc.github.io',
-  baseUrl: '/EngineOficce/',
+  baseUrl: '/EngineOffice/',
 
   organizationName: 'tbjc',
-  projectName: 'EngineOficce',
+  projectName: 'EngineOffice',
 
   onBrokenLinks: 'throw',
 

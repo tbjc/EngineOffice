@@ -483,7 +483,7 @@ docs-site/                 Sitio de documentación (Docusaurus): índice, Word, 
 
 ## Documentación
 
-- **Sitio de documentación (Docusaurus)**: <https://tbjc.github.io/EngineOficce/> — índice, Word, Excel,
+- **Sitio de documentación (Docusaurus)**: <https://tbjc.github.io/EngineOffice/> — índice, Word, Excel,
   PDF y formatos heredados, con un ejemplo por función. El código está en [`docs-site/`](docs-site) y
   se publica solo en cada `push` a `main`. Para verlo en local:
 
