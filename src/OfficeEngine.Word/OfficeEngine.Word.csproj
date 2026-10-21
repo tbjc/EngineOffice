@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>OfficeEngine.Word</RootNamespace>
+    <AssemblyName>OfficeEngine.Word</AssemblyName>
+    <Description>WordprocessingML (.docx) document model for OfficeEngine.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OfficeEngine.Core\OfficeEngine.Core.csproj" />
+    <ProjectReference Include="..\OfficeEngine.OpenXml\OfficeEngine.OpenXml.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" />
+  </ItemGroup>
+
+</Project>

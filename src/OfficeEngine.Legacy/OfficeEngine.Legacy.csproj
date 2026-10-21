@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>OfficeEngine.Legacy</RootNamespace>
+    <AssemblyName>OfficeEngine.Legacy</AssemblyName>
+    <Description>Conversion of the legacy Word and Excel formats to the modern ones, with an external engine.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OfficeEngine.LibreOffice\OfficeEngine.LibreOffice.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>OfficeEngine.Benchmarks</RootNamespace>
+    <AssemblyName>OfficeEngine.Benchmarks</AssemblyName>
+    <Description>Reproducible measurements of the OfficeEngine hot paths. It has no dependency beyond the library itself.</Description>
+    <IsPackable>false</IsPackable>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OfficeEngine.Word\OfficeEngine.Word.csproj" />
+    <ProjectReference Include="..\OfficeEngine.Excel\OfficeEngine.Excel.csproj" />
+  </ItemGroup>
+
+</Project>

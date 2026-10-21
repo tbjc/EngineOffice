@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>OfficeEngine.LibreOffice</RootNamespace>
+    <AssemblyName>OfficeEngine.LibreOffice</AssemblyName>
+    <Description>Internal runner of the LibreOffice process, shared by the PDF and the legacy adapters. Not a stable public API surface.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="OfficeEngine.Pdf.LibreOffice" />
+    <InternalsVisibleTo Include="OfficeEngine.Legacy" />
+    <InternalsVisibleTo Include="OfficeEngine.Tests" />
+  </ItemGroup>
+
+</Project>

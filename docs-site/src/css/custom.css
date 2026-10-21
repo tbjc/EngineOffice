@@ -1,0 +1,24 @@
+/**
+ * Estilos mínimos: la documentación usa el tema clásico, con el color de la marca.
+ */
+
+:root {
+  --ifm-color-primary: #1f497d;
+  --ifm-color-primary-dark: #1a4370;
+  --ifm-color-primary-darker: #193f6a;
+  --ifm-color-primary-darkest: #143357;
+  --ifm-color-primary-light: #24568f;
+  --ifm-color-primary-lighter: #265b96;
+  --ifm-color-primary-lightest: #2d6aa9;
+  --ifm-code-font-size: 92%;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #8ab4f8;
+  --ifm-color-primary-dark: #69a1f5;
+  --ifm-color-primary-darker: #5896f3;
+  --ifm-color-primary-darkest: #2878df;
+  --ifm-color-primary-light: #abc7fa;
+  --ifm-color-primary-lighter: #bcd0fb;
+  --ifm-color-primary-lightest: #deebfd;
+}

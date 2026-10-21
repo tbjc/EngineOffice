@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>OfficeEngine.Formulas</RootNamespace>
+    <AssemblyName>OfficeEngine.Formulas</AssemblyName>
+    <Description>Formula evaluation for OfficeEngine. The engine knows nothing about Word or Excel; the values come from a context.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="OfficeEngine.Excel" />
+    <InternalsVisibleTo Include="OfficeEngine.Tests" />
+  </ItemGroup>
+
+</Project>

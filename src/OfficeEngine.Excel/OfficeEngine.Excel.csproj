@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>OfficeEngine.Excel</RootNamespace>
+    <AssemblyName>OfficeEngine.Excel</AssemblyName>
+    <Description>SpreadsheetML (.xlsx) workbook model for OfficeEngine.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OfficeEngine.Core\OfficeEngine.Core.csproj" />
+    <ProjectReference Include="..\OfficeEngine.OpenXml\OfficeEngine.OpenXml.csproj" />
+    <ProjectReference Include="..\OfficeEngine.Formulas\OfficeEngine.Formulas.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" />
+  </ItemGroup>
+
+</Project>

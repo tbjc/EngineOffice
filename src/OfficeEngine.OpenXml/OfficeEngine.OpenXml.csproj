@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>OfficeEngine.OpenXml</RootNamespace>
+    <AssemblyName>OfficeEngine.OpenXml</AssemblyName>
+    <Description>Internal OOXML package infrastructure for OfficeEngine. Not a stable public API surface.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OfficeEngine.Core\OfficeEngine.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="OfficeEngine.Word" />
+    <InternalsVisibleTo Include="OfficeEngine.Excel" />
+    <InternalsVisibleTo Include="OfficeEngine.Tests" />
+  </ItemGroup>
+
+</Project>

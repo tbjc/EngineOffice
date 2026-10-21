@@ -1,0 +1,6 @@
+word.create|501.9|9245680|15539
+word.open|82.5|8289856|0
+word.roundtrip|83.9|8669192|0
+excel.create|1797.6|31263960|83228
+excel.open|172.3|15996312|0
+excel.roundtrip|205.5|17000160|0

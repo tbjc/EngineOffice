@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <!-- Test code does not ship, so missing XML docs are not errors here.
+         CA1707: underscores in test method names are the intended convention. -->
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CA1707</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\OfficeEngine.Core\OfficeEngine.Core.csproj" />
+    <ProjectReference Include="..\..\src\OfficeEngine.OpenXml\OfficeEngine.OpenXml.csproj" />
+    <ProjectReference Include="..\..\src\OfficeEngine.Word\OfficeEngine.Word.csproj" />
+    <ProjectReference Include="..\..\src\OfficeEngine.Excel\OfficeEngine.Excel.csproj" />
+    <ProjectReference Include="..\..\src\OfficeEngine.Pdf\OfficeEngine.Pdf.csproj" />
+    <ProjectReference Include="..\..\src\OfficeEngine.Pdf.LibreOffice\OfficeEngine.Pdf.LibreOffice.csproj" />
+    <ProjectReference Include="..\..\src\OfficeEngine.LibreOffice\OfficeEngine.LibreOffice.csproj" />
+    <ProjectReference Include="..\..\src\OfficeEngine.Legacy\OfficeEngine.Legacy.csproj" />
+    <ProjectReference Include="..\..\src\OfficeEngine.Formulas\OfficeEngine.Formulas.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+    <PackageReference Include="coverlet.collector" />
+    <PackageReference Include="DocumentFormat.OpenXml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+</Project>

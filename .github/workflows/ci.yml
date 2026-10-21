@@ -1,0 +1,105 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  DOTNET_NOLOGO: "true"
+  DOTNET_CLI_TELEMETRY_OPTOUT: "true"
+  CI: "true"
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Restore
+        run: dotnet restore OfficeEngine.sln
+
+      - name: Build (Release, warnings as errors)
+        run: dotnet build OfficeEngine.sln --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test OfficeEngine.sln --configuration Release --no-build --logger "trx;LogFileName=results.trx" --results-directory artifacts/testresults
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: artifacts/testresults
+          if-no-files-found: ignore
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: docs-site/package-lock.json
+
+      # The examples of the documentation are compiled against the real library: a page that
+      # documents an API that does not exist fails the build.
+      - name: Verify the examples
+        shell: pwsh
+        run: ./docs-site/verify-examples.ps1
+
+      - name: Build the site
+        working-directory: docs-site
+        run: |
+          npm ci
+          npm run build
+
+  benchmarks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Restore
+        run: dotnet restore OfficeEngine.sln
+
+      - name: Build (Release, warnings as errors)
+        run: dotnet build OfficeEngine.sln --configuration Release --no-restore
+
+      # The report is published, but the comparison is not a gate: the performance of a shared
+      # runner varies too much to fail a build on it. The reference is updated on purpose.
+      - name: Measure
+        continue-on-error: true
+        run: |
+          mkdir -p artifacts
+          dotnet run --project src/OfficeEngine.Benchmarks --configuration Release --no-build \
+            -- --baseline benchmarks/baseline.txt | tee artifacts/benchmark-report.txt
+
+      - name: Upload the benchmark report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-report
+          path: artifacts/benchmark-report.txt
+          if-no-files-found: ignore

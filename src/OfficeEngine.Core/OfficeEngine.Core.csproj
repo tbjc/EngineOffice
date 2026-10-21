@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>OfficeEngine</RootNamespace>
+    <AssemblyName>OfficeEngine.Core</AssemblyName>
+    <Description>Shared contracts, options, diagnostics, limits and errors for OfficeEngine.</Description>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>OfficeEngine.Pdf.LibreOffice</RootNamespace>
+    <AssemblyName>OfficeEngine.Pdf.LibreOffice</AssemblyName>
+    <Description>LibreOffice headless PDF converter for OfficeEngine.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OfficeEngine.Pdf\OfficeEngine.Pdf.csproj" />
+    <ProjectReference Include="..\OfficeEngine.LibreOffice\OfficeEngine.LibreOffice.csproj" />
+  </ItemGroup>
+
+</Project>
