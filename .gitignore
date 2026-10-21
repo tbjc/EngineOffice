@@ -2,7 +2,6 @@
 bin/
 obj/
 artifacts/
-docs/
 
 # Test results
 TestResults/
