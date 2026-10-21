@@ -7,11 +7,11 @@ const config: Config = {
   tagline: 'Crear, leer, modificar, guardar y convertir documentos de Word y Excel',
   favicon: 'img/favicon.svg',
 
-  url: 'https://example.com',
-  baseUrl: '/',
+  url: 'https://tbjc.github.io',
+  baseUrl: '/EngineOficce/',
 
-  organizationName: 'officeengine',
-  projectName: 'officeengine',
+  organizationName: 'tbjc',
+  projectName: 'EngineOficce',
 
   onBrokenLinks: 'throw',
 

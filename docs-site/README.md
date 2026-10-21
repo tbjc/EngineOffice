@@ -3,13 +3,19 @@
 Sitio de [Docusaurus](https://docusaurus.io) con la documentación de uso de la biblioteca: **índice,
 Word, Excel, PDF y formatos heredados**, con un ejemplo por función.
 
+**Publicado en**: <https://tbjc.github.io/EngineOficce/>
+
 ## Ponerlo en marcha
 
 ```bash
 npm install
-npm start        # servidor local en http://localhost:3000
+npm start        # servidor local en http://localhost:3000/EngineOficce/
 npm run build    # sitio estático en build/
 ```
+
+El sitio se publica solo: el flujo `deploy-docs` de `.github/workflows/ci.yml` lo sube a GitHub
+Pages en cada `push` a `main`. Las rutas del sitio usan `baseUrl: '/EngineOficce/'`, que es el
+nombre del repositorio.
 
 ## Estructura
 
